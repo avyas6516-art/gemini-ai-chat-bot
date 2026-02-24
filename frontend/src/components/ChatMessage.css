@@ -1,0 +1,156 @@
+.chat-message {
+  padding: 1.5rem;
+  padding-bottom: 3rem;
+  border-radius: 16px;
+  animation: fadeIn 0.3s ease-in;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-message.user {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  margin-left: 20%;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.dark-mode .chat-message.assistant {
+  background-color: #2a2a2a;
+  border: 1px solid #404040;
+}
+
+.light-mode .chat-message.assistant {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.message-role {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.message-time {
+  opacity: 0.6;
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.message-content {
+  line-height: 1.6;
+}
+
+.message-content p {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.message-content pre {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+}
+
+.message-content code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+}
+
+.message-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.message-content :not(pre) > code {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+.message-content h1,
+.message-content h2,
+.message-content h3,
+.message-content h4,
+.message-content h5,
+.message-content h6 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.message-content ul,
+.message-content ol {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.message-content li {
+  margin: 0.25rem 0;
+}
+
+.copy-button {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 1rem;
+  background-color: rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  color: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all 0.2s;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.copy-button:hover {
+  opacity: 1;
+  background-color: rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.5);
+  transform: translateY(-1px);
+}
+
+.copy-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .chat-message {
+    padding: 1rem;
+    padding-bottom: 3rem;
+  }
+
+  .chat-message.user {
+    margin-left: 5%;
+  }
+
+  .copy-button {
+    bottom: 0.5rem;
+    right: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+  }
+}

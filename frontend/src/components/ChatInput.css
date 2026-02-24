@@ -1,0 +1,370 @@
+.chat-input-form {
+  border-top: 1px solid;
+  padding: 0.75rem 2rem 1.5rem;
+  position: sticky;
+  bottom: 0;
+}
+
+.dark-mode .chat-input-form {
+  background-color: #2d2d2d;
+  border-top-color: #404040;
+}
+
+.light-mode .chat-input-form {
+  background-color: #f5f5f5;
+  border-top-color: #e0e0e0;
+}
+
+.attachments-preview {
+  max-width: 900px;
+  margin: 0 auto 0.75rem;
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding: 0.5rem;
+  background-color: rgba(102, 126, 234, 0.05);
+  border-radius: 12px;
+}
+
+.attachments-preview::-webkit-scrollbar {
+  height: 4px;
+}
+
+.attachments-preview::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.3);
+  border-radius: 2px;
+}
+
+.attachment-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.5);
+  min-width: 100px;
+  max-width: 120px;
+}
+
+.dark-mode .attachment-item {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.attachment-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.attachment-document {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 6px;
+}
+
+.doc-icon {
+  font-size: 2.5rem;
+}
+
+.attachment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.attachment-name {
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.attachment-size {
+  font-size: 0.65rem;
+  opacity: 0.6;
+}
+
+.remove-attachment {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(255, 59, 48, 0.9);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.remove-attachment:hover {
+  background-color: rgba(255, 59, 48, 1);
+  transform: scale(1.1);
+}
+
+.input-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+}
+
+.input-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+  padding-bottom: 0.5rem;
+}
+
+.action-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.dark-mode .action-button {
+  background-color: #2a2a2a;
+}
+
+.light-mode .action-button {
+  background-color: #f0f0f0;
+}
+
+.action-button:hover:not(:disabled) {
+  transform: scale(1.1);
+}
+
+.dark-mode .action-button:hover:not(:disabled) {
+  background-color: #3a3a3a;
+}
+
+.light-mode .action-button:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.action-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.attach-wrapper {
+  position: relative;
+}
+
+.attach-menu {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  min-width: 150px;
+  animation: slideUp 0.2s ease;
+}
+
+.dark-mode .attach-menu {
+  background-color: #2a2a2a;
+  border: 1px solid #404040;
+}
+
+.light-mode .attach-menu {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.attach-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: none;
+  color: inherit;
+}
+
+.dark-mode .attach-option:hover {
+  background-color: #3a3a3a;
+}
+
+.light-mode .attach-option:hover {
+  background-color: #f5f5f5;
+}
+
+.option-icon {
+  font-size: 1.5rem;
+}
+
+.option-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.input-container textarea {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: none;
+  max-height: 200px;
+  min-height: 48px;
+  overflow-y: auto;
+  transition: border-color 0.2s;
+}
+
+.dark-mode .input-container textarea {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-color: #404040;
+}
+
+.light-mode .input-container textarea {
+  background-color: #ffffff;
+  color: #1e1e1e;
+  border-color: #d0d0d0;
+}
+
+.input-container textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-container textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.send-button {
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 60px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.send-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.send-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.send-button:disabled {
+  background: #808080;
+  cursor: not-allowed;
+  opacity: 0.5;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .chat-input-form {
+    padding: 0.5rem 1rem 1rem;
+  }
+
+  .input-container {
+    gap: 0.5rem;
+  }
+
+  .input-actions {
+    gap: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .action-button {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .input-container textarea {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .send-button {
+    padding: 0.75rem 1rem;
+    min-width: 50px;
+    height: 42px;
+  }
+
+  .attachments-preview {
+    margin-bottom: 0.5rem;
+    padding: 0.4rem;
+  }
+
+  .attachment-item {
+    min-width: 80px;
+    max-width: 90px;
+    padding: 0.4rem;
+  }
+
+  .attachment-image,
+  .attachment-document {
+    width: 60px;
+    height: 60px;
+  }
+
+  .attach-menu {
+    min-width: 130px;
+  }
+
+  .option-label {
+    font-size: 0.85rem;
+  }
+}
