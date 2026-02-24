@@ -96,6 +96,7 @@ function App() {
 
   useEffect(() => {
     scrollToBottom();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [messages]);
 
   const sendMessage = async (messageText, attachments = []) => {
